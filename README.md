@@ -1,25 +1,27 @@
 # Traffic Sign Detection Using CNN
 
 ## Project Overview
-Traffic Sign Detection Using CNN is a computer vision project designed to detect and identify traffic signs from uploaded images. The system recognises different traffic signs, including speed limits, traffic lights, and stop signs.
+Traffic Sign Detection Using CNN is a computer vision project that detects and recognises traffic signs from uploaded images. It identifies different traffic signs, including speed limits, traffic lights, and stop signs.
 
 ## Features
 - Upload traffic sign images.
-- Detect traffic signs from uploaded images.
-- Identify multiple traffic sign categories.
-- Display prediction results with bounding boxes.
+- Detect traffic signs using a trained deep learning model.
+- Recognise 15 different traffic sign categories.
+- Display detected signs with bounding boxes.
 - Web-based interface using Flask.
 
 ## Technologies Used
 - Python
-- Convolutional Neural Networks (CNN)
+- CNN-based Deep Learning
+- YOLOv8
+- Flask
 - OpenCV
 - NumPy
-- Flask
-- Ultralytics
+- HTML
+- CSS
 
 ## Traffic Sign Categories
-The model is trained to recognise 15 classes:
+The model supports 15 classes:
 
 1. Green Light
 2. Red Light
@@ -41,19 +43,24 @@ The model is trained to recognise 15 classes:
 
 ```text
 traffic_sign_detection/
-│
 ├── app.py
 ├── new.py
 ├── trainall.py
 ├── data/
 │   └── data.yaml
 ├── templates/
-│   ├── index.html
-│   └── results.html
 ├── static/
-│   └── style.css
 └── README.md
 ```
+
+## Model Training
+The model is trained using the YOLOv8 Nano architecture with the following configuration:
+
+- Model: YOLOv8n
+- Epochs: 50
+- Image Size: 640 × 640
+- Batch Size: 16
+- Number of Classes: 15
 
 ## Installation
 
@@ -63,23 +70,29 @@ Clone the repository:
 git clone https://github.com/yashwanth4405/traffic-sign-detection-using-cnn.git
 ```
 
-Navigate to the project directory:
+Navigate to the project:
 
 ```bash
 cd traffic-sign-detection-using-cnn
 ```
 
-Install the required packages:
+Install dependencies:
 
 ```bash
 pip install flask ultralytics opencv-python numpy
 ```
 
-## Model Setup
+## Trained Model Setup
 
-The trained model file `best.pt` is not included in this repository.
+The trained model file (`best.pt`) is not included in this repository.
 
-Place your trained model in the location configured in `app.py`, or update `TRAINED_MODEL_PATH` to match its actual location.
+Place your trained model at:
+
+```text
+runs/train3/weights/best.pt
+```
+
+Alternatively, update the model path in `app.py`.
 
 ## Run the Application
 
@@ -87,7 +100,7 @@ Place your trained model in the location configured in `app.py`, or update `TRAI
 python app.py
 ```
 
-Open your browser and visit:
+Open your browser:
 
 ```text
 http://127.0.0.1:5000/
@@ -95,6 +108,8 @@ http://127.0.0.1:5000/
 
 Upload a traffic sign image to view the detection results.
 
-## GitHub Repository
+## Author
 
-https://github.com/yashwanth4405/traffic-sign-detection-using-cnn
+**Yashwanth**
+
+GitHub: https://github.com/yashwanth4405

@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# Dataset
+data/train/
+data/test/
+
+# Trained model files
+runs/
+
+# Uploaded images
+uploads/
+static/predictions/
+
+# Secrets
+.env
+*.key
+
+# Temporary files
+*.log
+.DS_Store
